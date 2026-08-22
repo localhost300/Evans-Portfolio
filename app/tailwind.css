@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0e3046;
+  --color-navy-light: #174b66;
+  --color-ink: #102c3d;
+  --color-coral: #d95c3c;
+  --color-cream: #f7f2ea;
+  --color-mist: #eaf3f6;
+}
+
+html { scroll-behavior: auto !important; }
+*, *::before, *::after { animation: none !important; transition: none !important; }
+.serviceGrid article:hover { transform: none !important; box-shadow: none !important; }
