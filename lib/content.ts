@@ -139,7 +139,14 @@ export const mergeContent = (
 ): SiteContent => ({
   ...defaultContent,
   ...value,
-  hero: { ...defaultContent.hero, ...value?.hero },
+  hero: {
+    ...defaultContent.hero,
+    ...value?.hero,
+    imageUrl:
+      value?.hero?.imageUrl === "/hero-adviser.png"
+        ? defaultContent.hero.imageUrl
+        : value?.hero?.imageUrl || defaultContent.hero.imageUrl,
+  },
   about: { ...defaultContent.about, ...value?.about },
   services: { ...defaultContent.services, ...value?.services },
   testimonials: { ...defaultContent.testimonials, ...value?.testimonials },
