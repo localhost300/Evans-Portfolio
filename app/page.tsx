@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -39,8 +39,19 @@ export default function Home() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState("");
+  const successRef = useRef<HTMLDivElement>(null);
   const [slide, setSlide] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (sent) {
+      successRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+      successRef.current?.focus({ preventScroll: true });
+    }
+  }, [sent]);
 
   useEffect(() => {
     if (supabase)
@@ -311,11 +322,20 @@ export default function Home() {
           </a>
         </div>
         {sent ? (
-          <div className="success">
-            <Check />
-            <h3>Thank you.</h3>
+          <div
+            className="success"
+            ref={successRef}
+            role="status"
+            tabIndex={-1}
+            aria-live="polite"
+          >
+            <span className="successIcon">
+              <Check />
+            </span>
+            <h3>Message sent successfully!</h3>
             <p>
-              Your message has been received. Daniel will be in touch shortly.
+              Thank you for getting in touch. Your enquiry has been received and
+              Daniel will respond shortly.
             </p>
             <button onClick={() => setSent(false)}>Send another message</button>
           </div>
