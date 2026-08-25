@@ -104,7 +104,7 @@ select {
 .heroImage {
   position: absolute;
   inset: 0 0 0 48%;
-  background: url("/hero-adviser.png") center/cover no-repeat;
+  background: var(--hero-image, url("/daniel-charles-evans.jpeg")) center/cover no-repeat;
 }
 .heroImage:after {
   content: "";

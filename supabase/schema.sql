@@ -20,6 +20,15 @@ create table if not exists public.enquiries (
 alter table public.website_content enable row level security;
 alter table public.enquiries enable row level security;
 
+-- Make this setup script safe to run again after schema updates.
+drop policy if exists "Public can read website content" on public.website_content;
+drop policy if exists "Authenticated admins can create content" on public.website_content;
+drop policy if exists "Authenticated admins can update content" on public.website_content;
+drop policy if exists "Anyone can submit an enquiry" on public.enquiries;
+drop policy if exists "Authenticated admins can read enquiries" on public.enquiries;
+drop policy if exists "Authenticated admins can update enquiries" on public.enquiries;
+drop policy if exists "Authenticated admins can delete enquiries" on public.enquiries;
+
 create policy "Public can read website content" on public.website_content for select using (true);
 create policy "Authenticated admins can create content" on public.website_content for insert to authenticated with check (true);
 create policy "Authenticated admins can update content" on public.website_content for update to authenticated using (true) with check (true);
@@ -27,6 +36,17 @@ create policy "Anyone can submit an enquiry" on public.enquiries for insert with
 create policy "Authenticated admins can read enquiries" on public.enquiries for select to authenticated using (true);
 create policy "Authenticated admins can update enquiries" on public.enquiries for update to authenticated using (true) with check (true);
 create policy "Authenticated admins can delete enquiries" on public.enquiries for delete to authenticated using (true);
+
+-- The CMS inbox uses these three states.
+alter table public.enquiries drop constraint if exists enquiries_status_check;
+alter table public.enquiries
+  add constraint enquiries_status_check check (status in ('New', 'Read', 'Replied'));
+
+create index if not exists enquiries_created_at_idx
+  on public.enquiries (created_at desc);
+
+create index if not exists enquiries_status_idx
+  on public.enquiries (status);
 
 insert into public.website_content (id, content)
 values ('main', '{}'::jsonb)
