@@ -11,7 +11,6 @@ import {
   Mail,
   Menu,
   MessageCircle,
-  Phone,
   PieChart,
   Quote,
   ShieldCheck,
@@ -97,27 +96,12 @@ export default function Home() {
     setSendError("");
     const form = event.currentTarget;
     const enquiry = Object.fromEntries(new FormData(form).entries());
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(enquiry),
-      });
-      if (!response.ok) throw new Error("Email delivery failed");
-    } catch {
-      setSending(false);
-      setSendError(
-        "Your message could not be sent. Please try again or email Daniel directly.",
-      );
-      return;
-    }
+
+    let savedToInbox = false;
     if (supabase) {
       const { error } = await supabase.from("enquiries").insert(enquiry);
-      if (error)
-        console.error(
-          "The enquiry email was sent, but it could not be saved.",
-          error,
-        );
+      savedToInbox = !error;
+      if (error) console.error("The enquiry could not be saved.", error);
     } else {
       const messages = JSON.parse(
         localStorage.getItem("dce-enquiries") || "[]",
@@ -134,6 +118,27 @@ export default function Home() {
           ...messages,
         ]),
       );
+      savedToInbox = true;
+    }
+
+    let emailSent = false;
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(enquiry),
+      });
+      emailSent = response.ok;
+    } catch {
+      console.error("The enquiry email notification could not be sent.");
+    }
+
+    if (!savedToInbox && !emailSent) {
+      setSending(false);
+      setSendError(
+        "Your message could not be sent. Please try again or email Daniel directly.",
+      );
+      return;
     }
     form.reset();
     setSending(false);
@@ -314,9 +319,6 @@ export default function Home() {
           <div className="eyebrow">{content.contact.eyebrow}</div>
           <h2>{withBreaks(content.contact.title)}</h2>
           <p>{content.contact.body}</p>
-          <a href={`tel:${content.contact.phone.replace(/\s/g, "")}`}>
-            <Phone size={16} /> {content.contact.phone}
-          </a>
           <a href={`mailto:${content.contact.email}`}>
             <Mail size={16} /> {content.contact.email}
           </a>
@@ -353,10 +355,6 @@ export default function Home() {
                 type="email"
                 placeholder="you@example.com"
               />
-            </label>
-            <label>
-              Phone number
-              <input name="phone" type="tel" placeholder="Your phone number" />
             </label>
             <label>
               Location

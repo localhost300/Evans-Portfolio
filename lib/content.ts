@@ -20,13 +20,7 @@ export type SiteContent = {
   };
   testimonials: { eyebrow: string; title: string; items: TestimonialContent[] };
   cta: { eyebrow: string; title: string; body: string; button: string };
-  contact: {
-    eyebrow: string;
-    title: string;
-    body: string;
-    phone: string;
-    email: string;
-  };
+  contact: { eyebrow: string; title: string; body: string; email: string };
   footer: {
     tagline: string;
     businessName: string;
@@ -122,7 +116,6 @@ export const defaultContent: SiteContent = {
     eyebrow: "Get in touch",
     title: "Let’s start a\nconversation.",
     body: "Tell me a little about your goals and what you would like help with. I’ll respond personally to arrange a confidential, no-obligation introductory conversation.",
-    phone: "+44 20 7946 0958",
     email: "cntact@danielcharlesevans.com",
   },
   footer: {

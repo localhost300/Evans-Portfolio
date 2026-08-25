@@ -28,7 +28,6 @@ type Enquiry = {
   id: number;
   name: string;
   email: string;
-  phone?: string;
   location: string;
   subject: string;
   message: string;
@@ -488,8 +487,7 @@ export default function AdminPage() {
                           {item.subject}
                         </p>
                         <small>
-                          {item.email} · {item.phone || "No phone"} ·{" "}
-                          {item.location}
+                          {item.email} · {item.location}
                         </small>
                       </div>
                       <div className="text-right">
@@ -922,12 +920,7 @@ function Editor({
           value={content.contact.body}
           onChange={(body) => change("contact", { body })}
         />
-        <div className="grid gap-4 sm:grid-cols-2">
-          <Field
-            label="Phone number"
-            value={content.contact.phone}
-            onChange={(phone) => change("contact", { phone })}
-          />
+        <div>
           <Field
             label="Email address"
             value={content.contact.email}
@@ -1055,7 +1048,7 @@ const previewBody = (section: Section, content: SiteContent) =>
           : section === "CTA"
             ? content.cta.body
             : section === "Contact"
-              ? `${content.contact.email} · ${content.contact.phone}`
+              ? content.contact.email
               : section === "Footer"
                 ? content.footer.tagline
                 : content.trust.map((item) => item.title).join(" · ");
