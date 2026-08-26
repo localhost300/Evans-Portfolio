@@ -9,10 +9,60 @@ const serif = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-serif',
 const sans = Manrope({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: { default: 'Daniel Charles Evans | Independent Investment Adviser', template: '%s | Daniel Charles Evans' },
-  description: 'Professional, personal investment advice to help you grow and safeguard your wealth.',
-  keywords: ['investment adviser', 'financial planning', 'retirement strategy', 'portfolio review'],
-  openGraph: { title: 'Daniel Charles Evans | Independent Investment Adviser', description: 'Professional investment advice aligned with your goals.', type: 'website' },
+  metadataBase: new URL('https://danielcharlesevans.com'),
+  title: {
+    default: 'Daniel Charles Evans | Independent Investment Adviser',
+    template: '%s | Daniel Charles Evans',
+  },
+  description:
+    'Independent investment advice from Daniel Charles Evans, including portfolio strategy, retirement planning, wealth preservation and risk management.',
+  keywords: [
+    'Daniel Charles Evans',
+    'independent investment adviser',
+    'investment planning',
+    'portfolio strategy',
+    'retirement planning',
+    'wealth preservation',
+    'portfolio review',
+    'risk management',
+  ],
+  authors: [{ name: 'Daniel Charles Evans' }],
+  creator: 'Daniel Charles Evans',
+  publisher: 'Daniel Charles Evans Advisory',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Daniel Charles Evans | Independent Investment Adviser',
+    description:
+      'Personal, research-led investment advice designed to help you build, manage and preserve wealth with confidence.',
+    url: '/',
+    siteName: 'Daniel Charles Evans Advisory',
+    locale: 'en_GB',
+    type: 'website',
+    images: [
+      {
+        url: '/daniel-charles-evans.jpeg',
+        alt: 'Daniel Charles Evans, independent investment adviser',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Daniel Charles Evans | Independent Investment Adviser',
+    description:
+      'Personal investment advice for portfolio strategy, retirement planning and long-term wealth preservation.',
+    images: ['/daniel-charles-evans.jpeg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
