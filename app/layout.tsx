@@ -31,9 +31,8 @@ export const metadata: Metadata = {
   publisher: 'Daniel Charles Evans Advisory',
   alternates: { canonical: '/' },
   icons: {
-    icon: [{ url: '/daniel-charles-evans.jpeg', type: 'image/jpeg' }],
-    shortcut: '/daniel-charles-evans.jpeg',
-    apple: '/daniel-charles-evans.jpeg',
+    icon: { url: '/favicon.svg', type: 'image/svg+xml' },
+    shortcut: '/favicon.svg',
   },
   openGraph: {
     title: 'Daniel Charles Evans | Financial Advisor and Broker',

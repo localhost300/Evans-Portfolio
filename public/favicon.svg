@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <path fill="#c94d35" d="M4 4h38c9.94 0 18 8.06 18 18v38H4V4Z"/>
+  <text
+    x="32"
+    y="39"
+    fill="#fff"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="19"
+    font-weight="800"
+    letter-spacing="-1"
+    text-anchor="middle"
+  >DCE</text>
+</svg>
