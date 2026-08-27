@@ -59,20 +59,20 @@ export const defaultContent: SiteContent = {
       "From your first structured plan to the stewardship of established wealth, each service is tailored, transparent and connected to the outcomes that matter to you.",
     items: [
       {
-        title: "Investment Planning & Portfolio Strategy",
-        text: "My investment planning process goes beyond selecting individual funds or reacting to short-term market movements. I develop a structured, research-led strategy around your objectives, time horizon, liquidity requirements and tolerance for risk.",
+        title: "Retirement Planning",
+        text: "Retirement planning involves far more than preparing for a particular age. It is about making sure the financial resources needed to maintain your lifestyle are available throughout every stage of retirement. Through careful preparation and disciplined investing, I create strategies that help clients move confidently from building wealth to generating a dependable, sustainable income. This process includes reviewing retirement accounts, investment portfolios, tax considerations and future income requirements. Every plan is shaped around the client’s individual circumstances, including lifestyle ambitions, expected expenses, healthcare needs and the effect of changing market conditions. By combining a thoughtful investment strategy with tax-efficient withdrawal planning, clients can approach retirement with greater clarity and peace of mind. The aim is to ensure your finances are structured to support lasting stability, flexibility and financial independence.",
       },
       {
-        title: "Retirement Planning & Long-Term Wealth Preservation",
-        text: "I develop comprehensive strategies focused on preserving and enhancing wealth through structured investment planning, tax-efficient solutions, estate coordination and reliable income generation.",
+        title: "Investment Management",
+        text: "Successful investment management requires more than choosing a collection of stocks or funds. It calls for disciplined research, meaningful diversification and a long-term strategy built around each client’s financial objectives and comfort with risk. My approach focuses on creating balanced portfolios designed to pursue consistent growth while managing exposure across asset classes, industries and international markets. Market conditions and wider economic developments are monitored carefully, allowing each portfolio to be reviewed and adjusted when appropriate so that it remains aligned with the client’s long-term direction. Every investment strategy is developed with close attention to risk-adjusted returns, tax efficiency and purposeful asset allocation. This gives clients the opportunity to participate in market growth while maintaining a clear and disciplined framework. The objective is not simply to invest money, but to build a resilient portfolio capable of growing and enduring through a variety of market environments.",
       },
       {
-        title: "Portfolio Review & Strategic Optimisation",
-        text: "I carry out a detailed assessment of asset allocation, diversification, fees, tax exposure, risk concentration and alignment with your wider financial objectives.",
+        title: "Wealth Preservation & Legacy Planning",
+        text: "Building wealth is only one part of a complete financial journey. Protecting that wealth and arranging for it to pass efficiently to future generations are equally important. Wealth preservation strategies are designed to reduce unnecessary risk, manage tax exposure and create a clear structure for long-term financial security. With careful coordination, clients can position their assets to continue supporting their families, businesses and wider goals well into the future. Legacy planning brings investment strategy together with estate considerations so that wealth can be transferred in a tax-conscious way that reflects the client’s values and intentions. Whether the priority is providing for loved ones, supporting the education of future generations, contributing to meaningful causes or creating an enduring family legacy, thoughtful planning can have a lasting impact. The goal is to ensure that wealth accumulated over a lifetime continues to provide security, opportunity and stability for the people and purposes that matter most.",
       },
       {
-        title: "Risk Management & Legacy Protection",
-        text: "I assess market risk, inflation, liquidity needs, income disruption and major life changes, then build coordinated safeguards around your portfolio.",
+        title: "Business Financial Consulting",
+        text: "Strong businesses need more than rising revenue. They depend on strategic financial planning, disciplined capital management and informed, forward-looking guidance. My business financial consulting service helps entrepreneurs and business owners organise their finances in ways that support sustainable business growth while also contributing to long-term personal wealth. Drawing on experience with owners across a range of industries, I help clients examine cash flow, improve capital allocation and identify opportunities for efficient reinvestment. Whether the objective is expanding operations, strengthening the company’s financial structure, preparing for succession or connecting business profits to a broader personal investment plan, every recommendation is tailored to the owner’s specific priorities. The purpose is straightforward: to help build a stronger, more resilient business while improving the personal financial position of the individuals whose vision and effort stand behind it.",
       },
     ],
   },
