@@ -345,7 +345,7 @@ export default function Home() {
           <form onSubmit={submit}>
             <label>
               Full name
-              <input required name="name" placeholder="Your full name" />
+              <input required name="name" />
             </label>
             <label>
               Email address
@@ -353,7 +353,6 @@ export default function Home() {
                 required
                 name="email"
                 type="email"
-                placeholder="you@example.com"
               />
             </label>
             <label>
@@ -363,19 +362,17 @@ export default function Home() {
                 name="phone"
                 type="tel"
                 autoComplete="tel"
-                placeholder="e.g. +44 7700 900123"
               />
             </label>
             <label>
               Location
-              <input required name="location" placeholder="City, country" />
+              <input required name="location" />
             </label>
             <label className="wide">
               Subject
               <input
                 required
                 name="subject"
-                placeholder="What would you like to discuss?"
               />
             </label>
             <label className="wide">
@@ -383,7 +380,6 @@ export default function Home() {
               <textarea
                 required
                 name="message"
-                placeholder="Tell me a little about your goals or enquiry..."
               />
             </label>
             <label className="consent wide">

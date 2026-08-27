@@ -11,14 +11,14 @@ const sans = Manrope({ subsets: ['latin'], variable: '--font-sans' });
 export const metadata: Metadata = {
   metadataBase: new URL('https://danielcharlesevans.com'),
   title: {
-    default: 'Daniel Charles Evans | Independent Investment Adviser',
+    default: 'Daniel Charles Evans | Financial Advisor and Broker',
     template: '%s | Daniel Charles Evans',
   },
   description:
-    'Independent investment advice from Daniel Charles Evans, including portfolio strategy, retirement planning, wealth preservation and risk management.',
+    'Financial advice and brokerage services from Daniel Charles Evans, including portfolio strategy, retirement planning, wealth preservation and risk management.',
   keywords: [
     'Daniel Charles Evans',
-    'independent investment adviser',
+    'financial advisor and broker',
     'investment planning',
     'portfolio strategy',
     'retirement planning',
@@ -30,8 +30,13 @@ export const metadata: Metadata = {
   creator: 'Daniel Charles Evans',
   publisher: 'Daniel Charles Evans Advisory',
   alternates: { canonical: '/' },
+  icons: {
+    icon: [{ url: '/daniel-charles-evans.jpeg', type: 'image/jpeg' }],
+    shortcut: '/daniel-charles-evans.jpeg',
+    apple: '/daniel-charles-evans.jpeg',
+  },
   openGraph: {
-    title: 'Daniel Charles Evans | Independent Investment Adviser',
+    title: 'Daniel Charles Evans | Financial Advisor and Broker',
     description:
       'Personal, research-led investment advice designed to help you build, manage and preserve wealth with confidence.',
     url: '/',
@@ -41,13 +46,13 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/daniel-charles-evans.jpeg',
-        alt: 'Daniel Charles Evans, independent investment adviser',
+        alt: 'Daniel Charles Evans, financial advisor and broker',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Daniel Charles Evans | Independent Investment Adviser',
+    title: 'Daniel Charles Evans | Financial Advisor and Broker',
     description:
       'Personal investment advice for portfolio strategy, retirement planning and long-term wealth preservation.',
     images: ['/daniel-charles-evans.jpeg'],

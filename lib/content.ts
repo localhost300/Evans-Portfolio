@@ -31,7 +31,7 @@ export type SiteContent = {
 
 export const defaultContent: SiteContent = {
   hero: {
-    eyebrow: "Independent investment adviser",
+    eyebrow: "Financial advisor and broker",
     title: "Daniel Charles Evans",
     body: "I offer professional investment advisory services to help individuals grow and safeguard their wealth over time. Through tailored strategy, disciplined execution and a deep understanding of market behaviour, I help you invest with clarity and confidence.",
     primaryButton: "Book a consultation",
@@ -47,7 +47,7 @@ export const defaultContent: SiteContent = {
     eyebrow: "About me",
     title: "Thoughtful advice.\nA personal relationship.",
     paragraphs: [
-      "I’m Daniel Charles Evans, an independent investment adviser committed to helping individuals and families make informed decisions about their wealth. I believe good advice starts by understanding the person behind the portfolio—your responsibilities, values, ambitions and the life you want your money to support.",
+      "I’m Daniel Charles Evans, a financial advisor and broker committed to helping individuals and families make informed decisions about their wealth. I believe good advice starts by understanding the person behind the portfolio: your responsibilities, values, ambitions and the life you want your money to support.",
       "My approach combines careful research with practical, measured decision-making. Rather than reacting to short-term market noise, I focus on building resilient portfolios, setting clear expectations and maintaining the discipline required for long-term progress. Every recommendation is explained clearly and shaped around your circumstances.",
       "Whether you are building wealth, approaching retirement, managing a significant financial transition or seeking a second opinion, you can expect attentive service, honest conversation and ongoing guidance as your needs evolve.",
     ],
@@ -116,7 +116,7 @@ export const defaultContent: SiteContent = {
     eyebrow: "Get in touch",
     title: "Let’s start a\nconversation.",
     body: "Tell me a little about your goals and what you would like help with. I’ll respond personally to arrange a confidential, no-obligation introductory conversation.",
-    email: "cntact@danielcharlesevans.com",
+    email: "contact@danielcharlesevans.com",
   },
   footer: {
     tagline: "Independent investment advice,\naligned with your goals.",
