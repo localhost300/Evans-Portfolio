@@ -6,6 +6,7 @@ export const runtime = "nodejs";
 type ContactBody = {
   name?: unknown;
   email?: unknown;
+  phone?: unknown;
   location?: unknown;
   subject?: unknown;
   message?: unknown;
@@ -33,6 +34,7 @@ export async function POST(request: Request) {
     const enquiry = {
       name: clean(body.name, 100),
       email: clean(body.email, 254),
+      phone: clean(body.phone, 30),
       location: clean(body.location, 100),
       subject: clean(body.subject, 150),
       message: clean(body.message, 5000),
@@ -40,6 +42,7 @@ export async function POST(request: Request) {
 
     if (
       !enquiry.name ||
+      !enquiry.phone ||
       !enquiry.subject ||
       !enquiry.message ||
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(enquiry.email)
@@ -75,8 +78,8 @@ export async function POST(request: Request) {
       to: CONTACT_TO_EMAIL || SMTP_USER,
       replyTo: enquiry.email,
       subject: `Website enquiry: ${enquiry.subject.replace(/[\r\n]/g, " ")}`,
-      text: `Name: ${enquiry.name}\nEmail: ${enquiry.email}\nLocation: ${enquiry.location}\n\n${enquiry.message}`,
-      html: `<h2>New website enquiry</h2><p><strong>Name:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>Location:</strong> ${safe.location}</p><p><strong>Subject:</strong> ${safe.subject}</p><p style="white-space:pre-wrap">${safe.message}</p>`,
+      text: `Name: ${enquiry.name}\nEmail: ${enquiry.email}\nPhone: ${enquiry.phone}\nLocation: ${enquiry.location}\n\n${enquiry.message}`,
+      html: `<h2>New website enquiry</h2><p><strong>Name:</strong> ${safe.name}</p><p><strong>Email:</strong> ${safe.email}</p><p><strong>Phone:</strong> ${safe.phone}</p><p><strong>Location:</strong> ${safe.location}</p><p><strong>Subject:</strong> ${safe.subject}</p><p style="white-space:pre-wrap">${safe.message}</p>`,
     });
 
     return NextResponse.json({ ok: true });

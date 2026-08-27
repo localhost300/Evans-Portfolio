@@ -28,6 +28,7 @@ type Enquiry = {
   id: number;
   name: string;
   email: string;
+  phone: string;
   location: string;
   subject: string;
   message: string;
@@ -487,7 +488,7 @@ export default function AdminPage() {
                           {item.subject}
                         </p>
                         <small>
-                          {item.email} · {item.location}
+                          {item.email} · {item.phone} · {item.location}
                         </small>
                       </div>
                       <div className="text-right">

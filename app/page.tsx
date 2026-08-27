@@ -357,6 +357,16 @@ export default function Home() {
               />
             </label>
             <label>
+              Phone number
+              <input
+                required
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                placeholder="e.g. +44 7700 900123"
+              />
+            </label>
+            <label>
               Location
               <input required name="location" placeholder="City, country" />
             </label>
