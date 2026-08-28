@@ -220,12 +220,12 @@ export default function Home() {
           <div className="eyebrow">{content.about.eyebrow}</div>
           <h2>{withBreaks(content.about.title)}</h2>
           {content.about.paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
+            <p key={index}>
+              {index === 1 &&
+                "With 22 years of experience across 2 firms and 54 state licenses, I bring extensive industry knowledge to every client relationship. "}
+              {paragraph}
+            </p>
           ))}
-          <p>
-            With 22 years of experience across 2 firms and 54 state licenses,
-            I bring extensive industry knowledge to every client relationship.
-          </p>
         </div>
         <div className="stats">
           <article>
