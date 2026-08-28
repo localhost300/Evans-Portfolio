@@ -5,18 +5,18 @@ import {
   ArrowLeft,
   ArrowRight,
   BadgeCheck,
+  Building2,
   CalendarDays,
   ChartNoAxesCombined,
   Check,
   Mail,
   Menu,
   MessageCircle,
+  MapPinned,
   PieChart,
   Quote,
   ShieldCheck,
   Target,
-  TrendingUp,
-  Users,
   X,
 } from "lucide-react";
 import { defaultContent, mergeContent, type SiteContent } from "../lib/content";
@@ -190,7 +190,12 @@ export default function Home() {
             <a className="button" href="#contact">
               {content.hero.primaryButton} <ArrowRight size={16} />
             </a>
-            <a className="textLink" href="#services">
+            <a
+              className="textLink"
+              href="https://reports.adviserinfo.sec.gov/reports/individual/individual_2302549.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {content.hero.secondaryButton}
             </a>
           </div>
@@ -221,18 +226,23 @@ export default function Home() {
         <div className="stats">
           <article>
             <BadgeCheck />
-            <strong>Personal</strong>
-            <span>Advice shaped around your life</span>
+            <strong>22</strong>
+            <span>Years of Experience</span>
           </article>
           <article>
-            <TrendingUp />
-            <strong>Strategic</strong>
-            <span>Evidence-led long-term planning</span>
+            <Building2 />
+            <strong>2</strong>
+            <span>Firms</span>
           </article>
           <article>
-            <Users />
-            <strong>Ongoing</strong>
-            <span>A relationship that evolves with you</span>
+            <MapPinned />
+            <strong>54</strong>
+            <span>State Licenses</span>
+          </article>
+          <article>
+            <ShieldCheck />
+            <strong>1</strong>
+            <span>Disclosure</span>
           </article>
         </div>
       </section>
