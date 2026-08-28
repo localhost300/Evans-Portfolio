@@ -222,6 +222,10 @@ export default function Home() {
           {content.about.paragraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
+          <p>
+            With 22 years of experience across 2 firms and 54 state licenses,
+            I bring extensive industry knowledge to every client relationship.
+          </p>
         </div>
         <div className="stats">
           <article>
@@ -238,11 +242,6 @@ export default function Home() {
             <MapPinned />
             <strong>54</strong>
             <span>State Licenses</span>
-          </article>
-          <article>
-            <ShieldCheck />
-            <strong>1</strong>
-            <span>Disclosure</span>
           </article>
         </div>
       </section>
