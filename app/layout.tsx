@@ -8,8 +8,46 @@ import './header-effects.css';
 const serif = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-serif', weight: ['500','600'] });
 const sans = Manrope({ subsets: ['latin'], variable: '--font-sans' });
 
+const siteUrl = 'https://danielcharlesevans.online';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: 'Daniel Charles Evans Advisory',
+      inLanguage: 'en',
+    },
+    {
+      '@type': 'Person',
+      '@id': `${siteUrl}/#daniel-charles-evans`,
+      name: 'Daniel Charles Evans',
+      url: siteUrl,
+      image: `${siteUrl}/daniel-charles-evans.jpeg`,
+      jobTitle: 'Financial Advisor and Broker',
+      email: 'mailto:contact@danielcharlesevans.online',
+      sameAs: [
+        'https://reports.adviserinfo.sec.gov/reports/individual/individual_2302549.pdf',
+      ],
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${siteUrl}/#business`,
+      name: 'Daniel Charles Evans Advisory',
+      url: siteUrl,
+      image: `${siteUrl}/daniel-charles-evans.jpeg`,
+      email: 'contact@danielcharlesevans.online',
+      description:
+        'Personal financial advisory and brokerage services, including investment management, retirement planning, wealth preservation and business financial consulting.',
+      founder: { '@id': `${siteUrl}/#daniel-charles-evans` },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://danielcharlesevans.com'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Daniel Charles Evans | Financial Advisor and Broker',
     template: '%s | Daniel Charles Evans',
@@ -29,6 +67,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Daniel Charles Evans' }],
   creator: 'Daniel Charles Evans',
   publisher: 'Daniel Charles Evans Advisory',
+  category: 'financial services',
   alternates: { canonical: '/' },
   icons: {
     icon: { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -45,6 +84,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/daniel-charles-evans.jpeg',
+        width: 1138,
+        height: 1280,
         alt: 'Daniel Charles Evans, financial advisor and broker',
       },
     ],
@@ -70,5 +111,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${serif.variable} ${sans.variable}`}>{children}</body></html>;
+  return (
+    <html lang="en">
+      <body className={`${serif.variable} ${sans.variable}`}>
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+          }}
+        />
+      </body>
+    </html>
+  );
 }

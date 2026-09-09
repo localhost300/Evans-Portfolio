@@ -116,7 +116,7 @@ export const defaultContent: SiteContent = {
     eyebrow: "Get in touch",
     title: "Let’s start a\nconversation.",
     body: "Tell me a little about your goals and what you would like help with. I’ll respond personally to arrange a confidential, no-obligation introductory conversation.",
-    email: "contact@danielcharlesevans.com",
+    email: "contact@danielcharlesevans.online",
   },
   footer: {
     tagline: "Independent investment advice,\naligned with your goals.",
