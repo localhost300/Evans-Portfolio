@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/admin/',
     },
-    sitemap: 'https://danielcharlesevans.online/sitemap.xml',
-    host: 'https://danielcharlesevans.online',
+    sitemap: 'https://www.danielcharlesevans.online/sitemap.xml',
+    host: 'https://www.danielcharlesevans.online',
   };
 }

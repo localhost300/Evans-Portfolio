@@ -8,7 +8,7 @@ import './header-effects.css';
 const serif = Cormorant_Garamond({ subsets: ['latin'], variable: '--font-serif', weight: ['500','600'] });
 const sans = Manrope({ subsets: ['latin'], variable: '--font-sans' });
 
-const siteUrl = 'https://danielcharlesevans.online';
+const siteUrl = 'https://www.danielcharlesevans.online';
 
 const structuredData = {
   '@context': 'https://schema.org',
