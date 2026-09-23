@@ -417,10 +417,6 @@ export default function Home() {
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
         </div>
-        <div>
-          <b>{content.footer.businessName}</b>
-          <p>{withBreaks(content.footer.businessDetails)}</p>
-        </div>
         <small>{content.footer.legal}</small>
       </footer>
     </main>
