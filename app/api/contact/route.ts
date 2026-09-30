@@ -102,12 +102,8 @@ export async function POST(request: Request) {
       typeof error.code === "string"
         ? error.code
         : "UNKNOWN";
-    const diagnostic =
-      error instanceof Error
-        ? error.message.replace(/[\r\n]/g, " ").slice(0, 200)
-        : "Unknown mail transport error";
     return NextResponse.json(
-      { error: "Unable to send message.", code, diagnostic },
+      { error: "Unable to send message.", code },
       { status: 500 },
     );
   }
