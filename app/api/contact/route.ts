@@ -63,10 +63,20 @@ export async function POST(request: Request) {
       );
     }
 
+    // Port 587 with STARTTLS is more reliable from serverless hosts than
+    // implicit TLS on port 465. Keep SMTP_PORT configurable for providers
+    // that require a different submission port.
+    const configuredPort = Number(SMTP_PORT || 587);
+    const port =
+      SMTP_HOST === "mail.danielcharlesevans.online" ? 587 : configuredPort;
     const transporter = nodemailer.createTransport({
       host: SMTP_HOST,
-      port: Number(SMTP_PORT || 465),
-      secure: Number(SMTP_PORT || 465) === 465,
+      port,
+      secure: port === 465,
+      requireTLS: port !== 465,
+      connectionTimeout: 10_000,
+      greetingTimeout: 10_000,
+      socketTimeout: 15_000,
       auth: { user: SMTP_USER, pass: SMTP_PASSWORD },
     });
 
