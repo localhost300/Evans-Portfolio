@@ -27,7 +27,7 @@ const structuredData = {
       url: siteUrl,
       image: `${siteUrl}/daniel-charles-evans.jpeg`,
       jobTitle: 'Financial Advisor and Broker',
-      email: 'mailto:info@danielcharlesevans.online',
+      email: 'mailto:advisory@danielcharlesevans.online',
       sameAs: [
         'https://reports.adviserinfo.sec.gov/reports/individual/individual_2302549.pdf',
       ],
@@ -38,7 +38,7 @@ const structuredData = {
       name: 'Daniel Charles Evans Advisory',
       url: siteUrl,
       image: `${siteUrl}/daniel-charles-evans.jpeg`,
-      email: 'info@danielcharlesevans.online',
+      email: 'advisory@danielcharlesevans.online',
       description:
         'Personal financial advisory and brokerage services, including investment management, retirement planning, wealth preservation and business financial consulting.',
       founder: { '@id': `${siteUrl}/#daniel-charles-evans` },

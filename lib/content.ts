@@ -116,7 +116,7 @@ export const defaultContent: SiteContent = {
     eyebrow: "Get in touch",
     title: "Let’s start a\nconversation.",
     body: "Tell me a little about your goals and what you would like help with. I’ll respond personally to arrange a confidential, no-obligation introductory conversation.",
-    email: "info@danielcharlesevans.online",
+    email: "advisory@danielcharlesevans.online",
   },
   footer: {
     tagline: "Independent investment advice,\naligned with your goals.",
@@ -144,7 +144,14 @@ export const mergeContent = (
   services: { ...defaultContent.services, ...value?.services },
   testimonials: { ...defaultContent.testimonials, ...value?.testimonials },
   cta: { ...defaultContent.cta, ...value?.cta },
-  contact: { ...defaultContent.contact, ...value?.contact },
+  contact: {
+    ...defaultContent.contact,
+    ...value?.contact,
+    email:
+      value?.contact?.email === "info@danielcharlesevans.online"
+        ? defaultContent.contact.email
+        : value?.contact?.email || defaultContent.contact.email,
+  },
   footer: { ...defaultContent.footer, ...value?.footer },
   trust: value?.trust?.length ? value.trust : defaultContent.trust,
 });
