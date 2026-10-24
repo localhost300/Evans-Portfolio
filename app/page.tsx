@@ -416,8 +416,8 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
-          <a href="mailto:info@danielcharlesevans.online">
-            info@danielcharlesevans.online
+          <a href="mailto:advisory@danielcharlesevans.online">
+            advisory@danielcharlesevans.online
           </a>
         </div>
         <small>{content.footer.legal}</small>
